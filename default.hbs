@@ -24,9 +24,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.21.0/plugins/line-numbers/prism-line-numbers.min.css" integrity="sha512-cbQXwDFK7lj2Fqfkuxbo5iD1dSbLlJGXGpfTDqbggqjHJeyzx88I3rfwjS38WJag/ihH7lzuGlGHpDBymLirZQ==" crossorigin="anonymous" />
     <style>
         pre[class*=language-] {
-            margin: 1.75em 0;
+            margin: 0 0 1.5em 0;
             font-size: 1.4rem;
-            background: #111;
+            background: #15171a; /* darkgrey var */
+        }
+
+        @media (max-width: 500px) {
+            pre[class*=language-] { {
+                margin-bottom: 1.28em;
+            }
         }
     </style>
 
