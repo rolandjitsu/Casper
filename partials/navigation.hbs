@@ -1,0 +1,29 @@
+{{!-- Custom secondary nav --}}
+{{!-- https://ghost.org/tutorials/adding-social-network-links/ --}}
+{{!-- https://ghost.org/docs/api/v3/handlebars-themes/helpers/navigation/#description --}}
+{{!-- https://simpleicons.org/ --}}
+{{!-- https://svgsprit.es/ --}}
+{{#if isSecondary}}
+    <!-- Secondary navigation -->
+    <ul class="nav" role="menu">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}}" role="menuitem">
+                <a href="{{url}}" class="social-link" target="_blank" rel="noopener">
+                    <svg width="16" height="16" role="img" aria-label="{{slug}} icon">
+                        <title>{{slug}}</title>
+                        <use xlink:href="#{{slug}}"></use>
+                    </svg>
+                </a>
+            </li>
+        {{/foreach}}
+    </ul>
+{{else}}
+    <!-- Primary navigation -->
+    <ul class="nav" role="menu">
+        {{#foreach navigation}}
+            <li class="{{link_class for=(url) class=(concat "nav-" slug)}}" role="menuitem">
+                <a href="{{url absolute="true"}}">{{label}}</a>
+            </li>
+        {{/foreach}}
+    </ul>
+{{/if}}
